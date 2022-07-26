@@ -5,7 +5,11 @@ from config import config
 app = Flask(__name__)
 
 
+@app.route('/')
+def index():
+    return render_template("auth/login_and_register.html")
+
+
 if __name__ == "__manin__":
-    # app.run(port = 3000, debug = True)
     app.config.from_object(config['development'])
     app.run()
